@@ -103,6 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2bb62a46466c1b418da2be1c8cea1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 3582547659661996223, guid: 9cca8e21293b02a4a819900df099152b, type: 3}
+  efecto: {fileID: 8101236504521576025, guid: b8f6b91abf95ed740957173782ccb262, type: 3}
 --- !u!65 &1225531463636851950
 BoxCollider:
   m_ObjectHideFlags: 0
