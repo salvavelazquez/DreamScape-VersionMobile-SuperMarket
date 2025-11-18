@@ -7,6 +7,7 @@ public class Coquita : Alimentos
         base.Awake();
         puntaje = 10;
     }
+
     public override void CaerObjeto()
     {
         rb.linearVelocity = Time.fixedDeltaTime * velocidad * direccion;
@@ -14,5 +15,6 @@ public class Coquita : Alimentos
     public override void OperarPuntaje()
     {
         GameManager.instancia.SumarPuntos(puntaje);
+        
     }
 }
