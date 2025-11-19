@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Alimentos : MonoBehaviour
 {
-    protected float velocidad = 1.2f;
+    protected float velocidad = 3f;
     protected Vector3 direccion = Vector3.down;
     protected int puntaje;
     protected Rigidbody rb;
@@ -16,6 +16,15 @@ public abstract class Alimentos : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.useGravity = false;
+        }
+    }
+
+    protected virtual void FixedUpdate()
+    {
+        CaerObjeto();
     }
     public abstract void CaerObjeto();
     public abstract void OperarPuntaje();

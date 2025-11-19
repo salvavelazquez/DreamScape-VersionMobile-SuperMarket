@@ -23,9 +23,6 @@ public class GeneradorAlimentos : MonoBehaviour
     {
         int index = Random.Range(0, prefabsAlimentos.Length);
         GameObject nuevoAlimento = Instantiate(prefabsAlimentos[index], transform.position, Quaternion.identity);
-
-        Alimentos alimento = nuevoAlimento.GetComponent<Alimentos>();
-        alimento.CaerObjeto();
     }
     IEnumerator GenerarAlimentosPeriodicamente()
     {

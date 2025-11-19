@@ -9,7 +9,7 @@ public class Cereal : Alimentos
     }
     public override void CaerObjeto()
     {
-        rb.linearVelocity = Time.fixedDeltaTime * velocidad * direccion;
+        rb.linearVelocity = velocidad * direccion;
     }
     public override void OperarPuntaje()
     {
