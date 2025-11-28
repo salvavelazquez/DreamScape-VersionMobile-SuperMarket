@@ -1,0 +1,12 @@
+# ninja log v5
+97	9770	7860590640612708	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	c9e63a806a1b4726
+59	10082	7860590643993026	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	a418593459514ee8
+28	10224	7860590644003001	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	7716822b69ac69eb
+49	10436	7860590647553599	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	3b3abd5458d4469f
+71	10567	7860590648763700	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	647ceb2acdfedb49
+1	10843	7860590650492754	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b8d82841829395cd
+10224	11505	7860590657941665	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	1286c70aaea590d2
+9775	12003	7860590663446160	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	67e4992e31641d9f
+10083	12108	7860590664411104	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	3a3d47a580b997f0
+11520	12408	7860590667604388	C:/Users/Equipo/Desktop/DISENO-ll-2025/TP-FINAL/DreamScape-VersionMobile-Supermarket/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2l5c145o/obj/arm64-v8a/libswappywrapper.so	3e1e73341d8d8231
+12108	12824	7860590671507818	C:/Users/Equipo/Desktop/DISENO-ll-2025/TP-FINAL/DreamScape-VersionMobile-Supermarket/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2l5c145o/obj/arm64-v8a/libgame.so	87bd05065aac13fe
