@@ -5,7 +5,7 @@ public class pera : Alimentos
      protected override void Awake()
     {
         base.Awake();
-        puntaje = +20;
+        puntaje = 20;
     }
     public override void CaerObjeto()
     {

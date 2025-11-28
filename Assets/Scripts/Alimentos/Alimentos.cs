@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Alimentos : MonoBehaviour
 {
@@ -6,12 +6,19 @@ public abstract class Alimentos : MonoBehaviour
     protected Vector3 direccion = Vector3.down;
     protected int puntaje;
     protected Rigidbody rb;
-    private int contador;
 
-    public float Velocidad { get => velocidad; set => velocidad = value; }
-    public Vector3 Direccion { get => direccion; set => direccion = value; }
-    public int Puntaje { get => puntaje; set => puntaje = value; }
-    protected int Contador { get => contador; set => contador = value; }
+    public float Velocidad
+    {
+        get => velocidad;
+        set
+        {
+            velocidad = value;
+
+            // Aplicar velocidad inmediatamente si ya existe el rigidbody
+            if (rb != null)
+                AplicarVelocidad();
+        }
+    }
 
     protected virtual void Awake()
     {
@@ -24,10 +31,18 @@ public abstract class Alimentos : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        CaerObjeto();
+        AplicarVelocidad();
     }
+
+    protected void AplicarVelocidad()
+    {
+        if (rb != null)
+            rb.linearVelocity = direccion * velocidad;
+    }
+
     public abstract void CaerObjeto();
     public abstract void OperarPuntaje();
+
     public void DestruirObjeto()
     {
         Destroy(gameObject);

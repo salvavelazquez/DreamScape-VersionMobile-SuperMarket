@@ -5,7 +5,7 @@ public class Hamburguesa : Alimentos
     protected override void Awake()
     {
         base.Awake();
-        puntaje = -20;
+        puntaje = -10;
     }
     public override void CaerObjeto()
     {

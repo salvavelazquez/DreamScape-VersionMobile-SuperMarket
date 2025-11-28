@@ -6,15 +6,23 @@ using System.Collections;
 
 public class ControladorTiempo : MonoBehaviour
 {
-    public float tiempoInicial = 60f; 
+    [Header("Pantallas de resultado")]
+    public GameObject panelGanaste;
+    public GameObject panelPerdiste;
+    public TextMeshProUGUI textoResultadoPuntaje;
+
+    public float tiempoInicial = 60f;
     private float tiempoRestante;
     private bool tiempoAgotado = false;
 
     public TextMeshProUGUI textoTiempo;
-    public GameObject panelPuntajeFinal;
+    
+
+
 
     void Start()
     {
+        Time.timeScale = 1f;
         tiempoRestante = tiempoInicial;
     }
 
@@ -56,8 +64,33 @@ public class ControladorTiempo : MonoBehaviour
     }
     IEnumerator VolverAlMenuDespuesDeEspera()
     {
-        panelPuntajeFinal.SetActive(true);
+        MostrarResultado();
         yield return new WaitForSecondsRealtime(5f);
         SceneManager.LoadScene("Menu");
     }
+
+    private void MostrarResultado()
+    {
+        
+
+        int puntajeFinal = GameManager.instancia.PuntajeTotal;
+
+        // Mostrar puntaje en el texto
+        textoResultadoPuntaje.text = "Puntaje Final: " + puntajeFinal;
+
+        // Ocultar ambos por seguridad
+        panelGanaste.SetActive(false);
+        panelPerdiste.SetActive(false);
+
+        // Elegir panel correspondiente
+        if (puntajeFinal > 0)
+        {
+            panelGanaste.SetActive(true);
+        }
+        else
+        {
+            panelPerdiste.SetActive(true);
+        }
+    }
+
 }

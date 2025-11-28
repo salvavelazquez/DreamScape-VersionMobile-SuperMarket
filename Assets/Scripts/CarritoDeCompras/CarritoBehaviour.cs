@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections; // Necesario para Corutinas
 
 public class CarritoBehaviour : MonoBehaviour
@@ -6,13 +6,13 @@ public class CarritoBehaviour : MonoBehaviour
     // VARIABLES PARA EL EFECTO DE GASEOSA
     [Header("Efectos de Gaseosa")]
     [SerializeField] private ParticleSystem efectoVisualGaseosa;
-    [SerializeField] private float duracionEfectoGaseosa = 2.0f; // Duración de la Aceleración
-    [SerializeField] private float velocidadBoost = 7.5f;
+    [SerializeField] private float duracionEfectoGaseosa = 3.0f; // DuraciÃ³n de la AceleraciÃ³n
+    [SerializeField] private float velocidadBoost = 40f;
 
     // VARIABLES PARA EL EFECTO GRASOSO
     [Header("Efectos de Pizza (Grasoso)")]
     [SerializeField] private ParticleSystem efectoVisualGrasoso;
-    [SerializeField] private float duracionEfectoGrasoso = 3.0f; // Duración de la Ralentización
+    [SerializeField] private float duracionEfectoGrasoso = 3.0f; // DuraciÃ³n de la RalentizaciÃ³n
     [SerializeField] private float velocidadSlow = 2.0f; // La nueva velocidad lenta
 
     // VARIABLES PRIVADAS
@@ -20,11 +20,20 @@ public class CarritoBehaviour : MonoBehaviour
     private float velocidadNormal;
     private int contadorGaseosa = 0;
     private int contadorPizza = 0; // NUEVO CONTADOR PARA LA PIZZA
-    private bool efectoActivo = false; // Bandera para evitar efectos simultáneos
+    private bool efectoActivo = false; // Bandera para evitar efectos simultÃ¡neos
 
     [Header("Floating Text")]
     public GameObject floatingTextPrefab;
     public Transform canvasHUD;
+
+    [Header("PowerUp: Mucha AzÃºcar")]
+    public GameObject cartelAzucar;
+    private int contadorCereal = 0;
+    private bool azucarActiva = false;
+
+    public GameObject cartelGrasas;
+
+
 
     void Awake()
     {
@@ -43,7 +52,7 @@ public class CarritoBehaviour : MonoBehaviour
             alimento.OperarPuntaje();
             alimento.DestruirObjeto();
 
-            // Texto flotante según si es comida saludable o chatarra
+            // Texto flotante segÃºn si es comida saludable o chatarra
             if (alimento is BananaBehaviour)
             {
                 SpawnFloatingText("+10", Color.green);
@@ -54,9 +63,20 @@ public class CarritoBehaviour : MonoBehaviour
                 SpawnFloatingText("-10", Color.red);
             }
 
+            if (alimento is Cereal)
+            {
+                contadorCereal++;
+
+                if (contadorCereal >= 3 && !azucarActiva)
+                {
+                    contadorCereal = 0;
+                    StartCoroutine(ActivarMuchaAzucar());
+                }
+            }
 
 
-            // Lógica para el efecto de GASEOSA
+
+            // LÃ³gica para el efecto de GASEOSA
             if (alimento is Coquita || alimento is SpriteGaseosa)
             {
                 contadorGaseosa++;
@@ -65,22 +85,22 @@ public class CarritoBehaviour : MonoBehaviour
 
                 if (contadorGaseosa >= 3 && !efectoActivo)
                 {
-                    Debug.Log("¡MUCHA GASEOSA! Iniciando efecto de Aceleración...");
+                    Debug.Log("Â¡MUCHA GASEOSA! Iniciando efecto de AceleraciÃ³n...");
                     contadorGaseosa = 0;
                     StopCoroutine(nameof(ActivarEfectoGrasoso)); // Previene/detiene el efecto contrario
                     StartCoroutine(ActivarEfectoGaseosa());
                 }
             }
-            // Lógica para el efecto de PIZZA (GRASOSO)
+            // LÃ³gica para el efecto de PIZZA (GRASOSO)
             else if (alimento is Pizza|| alimento is PapasLays || alimento is Hamburguesa || alimento is pancho)
             {
                 contadorPizza++; // Incrementa el contador de Pizza
                 contadorGaseosa = 0; // Reinicia el contador opuesto
                 Debug.Log("Pizza recogida! Contador: " + contadorPizza);
 
-                if (contadorPizza >= 3 && !efectoActivo) // NUEVA CONDICIÓN DE UMBRAL
+                if (contadorPizza >= 3 && !efectoActivo) // NUEVA CONDICIÃ“N DE UMBRAL
                 {
-                    Debug.Log("¡MUCHA PIZZA! Iniciando efecto de Ralentización...");
+                    Debug.Log("Â¡MUCHA PIZZA! Iniciando efecto de RalentizaciÃ³n...");
                     contadorPizza = 0;
                     StopCoroutine(nameof(ActivarEfectoGaseosa)); // Previene/detiene el efecto contrario
                     StartCoroutine(ActivarEfectoGrasoso());
@@ -89,7 +109,7 @@ public class CarritoBehaviour : MonoBehaviour
         }
     }
 
-    // Corrutina para el efecto de Aceleración (Gaseosa)
+    // Corrutina para el efecto de AceleraciÃ³n (Gaseosa)
     private IEnumerator ActivarEfectoGaseosa()
     {
         efectoActivo = true;
@@ -105,11 +125,15 @@ public class CarritoBehaviour : MonoBehaviour
         efectoActivo = false;
     }
 
-    // Corrutina para el efecto de Ralentización (Grasoso)
+    // Corrutina para el efecto de RalentizaciÃ³n (Grasoso)
     private IEnumerator ActivarEfectoGrasoso()
     {
         efectoActivo = true;
-        playerController.speed = velocidadSlow; // Aplica la ralentización
+
+        if (cartelGrasas != null)
+            cartelGrasas.SetActive(true);
+
+        playerController.speed = velocidadSlow; // Aplica la ralentizaciÃ³n
 
         if (efectoVisualGrasoso != null)
         {
@@ -126,6 +150,11 @@ public class CarritoBehaviour : MonoBehaviour
         {
             efectoVisualGrasoso.gameObject.SetActive(false);
         }
+
+        // Ocultar cartel
+        if (cartelGrasas != null)
+            cartelGrasas.SetActive(false);
+
         efectoActivo = false;
     }
 
@@ -133,7 +162,7 @@ public class CarritoBehaviour : MonoBehaviour
     {
         if (floatingTextPrefab == null || canvasHUD == null)
             return;
-        Debug.Log("ENTROOOOOO");
+        
         // Crear texto en el canvas
         GameObject go = Instantiate(floatingTextPrefab, canvasHUD);
 
@@ -144,6 +173,31 @@ public class CarritoBehaviour : MonoBehaviour
         // Posicionar cerca del carrito (convertir coordenadas a UI)
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
         go.transform.position = screenPos + new Vector3(0, 80, 0); // un poquito arriba
+    }
+
+    private IEnumerator ActivarMuchaAzucar()
+    {
+        azucarActiva = true;
+
+        // Mostrar cartel
+        if (cartelAzucar != null)
+            cartelAzucar.SetActive(true);
+
+        // Aumentar velocidad de caÃ­da â†’ A todos los alimentos
+        GeneradorAlimentos gen = FindFirstObjectByType<GeneradorAlimentos>();
+        if (gen != null)
+            gen.SetVelocidadAlimentos(18f); // velocidad nueva
+
+        yield return new WaitForSeconds(10f);
+
+        // Volver a la normalidad
+        if (gen != null)
+            gen.SetVelocidadAlimentos(3f); // velocidad normal
+
+        if (cartelAzucar != null)
+            cartelAzucar.SetActive(false);
+
+        azucarActiva = false;
     }
 
 }

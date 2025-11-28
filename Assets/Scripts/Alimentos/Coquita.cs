@@ -5,7 +5,7 @@ public class Coquita : Alimentos
     protected override void Awake()
     {
         base.Awake();
-        puntaje = 10;
+        puntaje = -10;
     }
 
     public override void CaerObjeto()

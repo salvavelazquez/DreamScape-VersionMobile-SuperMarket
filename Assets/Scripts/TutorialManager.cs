@@ -8,7 +8,6 @@ public class TutorialManager : MonoBehaviour
 
     void Start()
     {
-        // Al inicio, mostrar solo el panel de controles
         MostrarPanelControles();
     }
 
