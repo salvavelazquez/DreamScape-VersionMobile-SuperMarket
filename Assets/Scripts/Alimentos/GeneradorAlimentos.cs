@@ -6,6 +6,8 @@ public class GeneradorAlimentos : MonoBehaviour
     public GameObject[] prefabsAlimentos; // Asignale los prefabs en el inspector
     private float intervalo = 0.7f;
     private int intervaloEntero;
+    private float velocidadActual = 3f;
+
     [SerializeField]private Transform puntoA;
     [SerializeField] private Transform puntoB;
     [SerializeField] private float velocidad;
@@ -19,10 +21,27 @@ public class GeneradorAlimentos : MonoBehaviour
         float t = (Mathf.Cos(Time.time * velocidad) + 1f) / 2f; // Oscila entre 0 y 1
         transform.position = Vector3.Lerp(puntoA.position, puntoB.position, t);
     }
+
+    public void SetVelocidadAlimentos(float nuevaVelocidad)
+    {
+        velocidadActual = nuevaVelocidad;
+
+        foreach (var alimento in FindObjectsByType<Alimentos>(FindObjectsSortMode.None))
+        {
+            alimento.Velocidad = nuevaVelocidad;
+        }
+    }
+
+
     public void GenerarAlimento()
     {
         int index = Random.Range(0, prefabsAlimentos.Length);
         GameObject nuevoAlimento = Instantiate(prefabsAlimentos[index], transform.position, Quaternion.identity);
+
+        // Asignar velocidad actual al alimento recién creado
+        Alimentos a = nuevoAlimento.GetComponent<Alimentos>();
+        if (a != null)
+            a.Velocidad = velocidadActual;
     }
     IEnumerator GenerarAlimentosPeriodicamente()
     {

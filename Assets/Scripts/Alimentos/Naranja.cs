@@ -5,7 +5,7 @@ public class Naranja : Alimentos
     protected override void Awake()
     {
         base.Awake();
-        puntaje = 100;
+        puntaje = 20;
     }
     public override void CaerObjeto()
     {

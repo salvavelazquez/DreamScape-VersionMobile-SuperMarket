@@ -272,7 +272,7 @@ PrefabInstance:
       value: uploads_files_2155451_cloud
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 332293315439551099, guid: c039adfd906379c49b58f9ccb866601b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -407,14 +407,14 @@ RectTransform:
   m_GameObject: {fileID: 744275225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9055277, y: 1.9055277, z: 1.9055277}
+  m_LocalScale: {x: 2.2761528, y: 2.2761528, z: 2.2761528}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1024713115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 364, y: -167}
+  m_AnchoredPosition: {x: 364, y: -193.00003}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744275227
@@ -564,7 +564,7 @@ PrefabInstance:
       value: uploads_files_2155451_cloud (3)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 332293315439551099, guid: c039adfd906379c49b58f9ccb866601b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -597,14 +597,14 @@ RectTransform:
   m_GameObject: {fileID: 835634641}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9055277, y: 1.9055277, z: 1.9055277}
+  m_LocalScale: {x: 2.2761528, y: 2.2761528, z: 2.2761528}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1024713115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.999987, y: -69.99997}
+  m_AnchoredPosition: {x: -15.999987, y: -96}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835634643
@@ -754,7 +754,7 @@ PrefabInstance:
       value: uploads_files_2155451_cloud (1)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 332293315439551099, guid: c039adfd906379c49b58f9ccb866601b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -951,14 +951,14 @@ RectTransform:
   m_GameObject: {fileID: 1296356396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9055277, y: 1.9055277, z: 1.9055277}
+  m_LocalScale: {x: 2.2761528, y: 2.2761528, z: 2.2761528}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1024713115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -411, y: -169}
+  m_AnchoredPosition: {x: -411, y: -195.00003}
   m_SizeDelta: {x: 160, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296356398
@@ -1116,7 +1116,7 @@ PrefabInstance:
       value: uploads_files_2155451_cloud (2)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 332293315439551099, guid: c039adfd906379c49b58f9ccb866601b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 1350221956}
   - component: {fileID: 1350221959}
   - component: {fileID: 1350221958}
-  - component: {fileID: 1350221957}
+  - component: {fileID: 1350221960}
   m_Layer: 5
   m_Name: LOGO
   m_TagString: Untagged
@@ -1159,18 +1159,6 @@ RectTransform:
   m_AnchoredPosition: {x: -19, y: 171}
   m_SizeDelta: {x: 402.2, y: 288.3}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1350221957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350221955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c380ec78ac5db4d842fbba32ecf86b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1350221958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,6 +1197,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350221955}
   m_CullTransparentMesh: 1
+--- !u!114 &1350221960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350221955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f0d7529de332344a2dcbd84e180630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  distance: 10
 --- !u!1 &1418510706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1359,7 @@ PrefabInstance:
       value: uploads_files_2155451_cloud (4)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 332293315439551099, guid: c039adfd906379c49b58f9ccb866601b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1562,7 +1564,7 @@ PrefabInstance:
       value: uploads_files_2155451_cloud (6)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 332293315439551099, guid: c039adfd906379c49b58f9ccb866601b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1620,7 +1622,7 @@ PrefabInstance:
       value: uploads_files_2155451_cloud (5)
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 332293315439551099, guid: c039adfd906379c49b58f9ccb866601b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1785,7 +1787,7 @@ PrefabInstance:
       value: uploads_files_2155451_cloud
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 332293315439551099, guid: c039adfd906379c49b58f9ccb866601b, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

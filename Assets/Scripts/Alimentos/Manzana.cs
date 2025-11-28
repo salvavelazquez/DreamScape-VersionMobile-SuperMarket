@@ -5,7 +5,7 @@ public class Manzana : Alimentos
     protected override void Awake()
     {
         base.Awake();
-        puntaje = 10;
+        puntaje = 20;
     }
     public override void CaerObjeto()
     {
