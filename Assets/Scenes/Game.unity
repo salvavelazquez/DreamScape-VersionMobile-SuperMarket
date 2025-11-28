@@ -1870,7 +1870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -465, y: 29}
+  m_AnchoredPosition: {x: -465, y: 38.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784569027
@@ -1945,7 +1945,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -511, y: 53}
+  m_AnchoredPosition: {x: -511, y: 61.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818991648
@@ -3732,7 +3732,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 314, y: -153}
+  m_AnchoredPosition: {x: 293.9, y: -153}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759375796
@@ -4272,7 +4272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -402.9, y: 29}
+  m_AnchoredPosition: {x: -404.2, y: 37.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1961362571
@@ -4765,6 +4765,10 @@ PrefabInstance:
       propertyPath: efectoVisualGrasoso
       value: 
       objectReference: {fileID: 2308169726988301128}
+    - target: {fileID: 3582547659661996223, guid: 9cca8e21293b02a4a819900df099152b, type: 3}
+      propertyPath: speed
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 3582547659661996223, guid: 9cca8e21293b02a4a819900df099152b, type: 3}
       propertyPath: sceneCamera
       value: 
