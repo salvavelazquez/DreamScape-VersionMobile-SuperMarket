@@ -32,6 +32,7 @@ public class CarritoBehaviour : MonoBehaviour
     private bool azucarActiva = false;
 
     public GameObject cartelGrasas;
+    public GameObject cartelGaseosas;
 
 
 
@@ -113,6 +114,8 @@ public class CarritoBehaviour : MonoBehaviour
     private IEnumerator ActivarEfectoGaseosa()
     {
         efectoActivo = true;
+        if (cartelGaseosas != null)
+            cartelGaseosas.SetActive(true);
         playerController.speed = velocidadBoost;
         efectoVisualGaseosa.gameObject.SetActive(true);
 
@@ -122,6 +125,9 @@ public class CarritoBehaviour : MonoBehaviour
         Debug.Log("Efecto de Gaseosa terminado. Volviendo a la normalidad.");
         playerController.speed = velocidadNormal;
         efectoVisualGaseosa.gameObject.SetActive(false);
+        // Ocultar cartel
+        if (cartelGaseosas != null)
+            cartelGaseosas.SetActive(false);
         efectoActivo = false;
     }
 
