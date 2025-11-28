@@ -4,16 +4,16 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private string gameSceneName = "Game";
-    [SerializeField] private string calibrationSceneName = "Calibration";
+    [SerializeField] private string tutorialSceneName = "Tutorial";
 
     public void OnPlayClicked()
     {
         SceneManager.LoadScene(gameSceneName);
     }
 
-    public void OnCalibrateClicked()
+    public void OnTutorialClicked()
     {
-        SceneManager.LoadScene(calibrationSceneName);
+        SceneManager.LoadScene(tutorialSceneName);
     }
 
     public void OnQuitClicked()

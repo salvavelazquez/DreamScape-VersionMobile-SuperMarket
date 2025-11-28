@@ -22,6 +22,10 @@ public class CarritoBehaviour : MonoBehaviour
     private int contadorPizza = 0; // NUEVO CONTADOR PARA LA PIZZA
     private bool efectoActivo = false; // Bandera para evitar efectos simultáneos
 
+    [Header("Floating Text")]
+    public GameObject floatingTextPrefab;
+    public Transform canvasHUD;
+
     void Awake()
     {
         playerController = GetComponentInParent<CartAccelerometerController>();
@@ -38,6 +42,19 @@ public class CarritoBehaviour : MonoBehaviour
         {
             alimento.OperarPuntaje();
             alimento.DestruirObjeto();
+
+            // Texto flotante según si es comida saludable o chatarra
+            if (alimento is BananaBehaviour)
+            {
+                SpawnFloatingText("+10", Color.green);
+
+            }
+            else if (alimento is Hamburguesa)
+            {
+                SpawnFloatingText("-10", Color.red);
+            }
+
+
 
             // Lógica para el efecto de GASEOSA
             if (alimento is Coquita || alimento is SpriteGaseosa)
@@ -111,4 +128,22 @@ public class CarritoBehaviour : MonoBehaviour
         }
         efectoActivo = false;
     }
+
+    private void SpawnFloatingText(string mensaje, Color color)
+    {
+        if (floatingTextPrefab == null || canvasHUD == null)
+            return;
+        Debug.Log("ENTROOOOOO");
+        // Crear texto en el canvas
+        GameObject go = Instantiate(floatingTextPrefab, canvasHUD);
+
+        // Obtener tu script de texto flotante
+        TextoFlotante ft = go.GetComponent<TextoFlotante>();
+        ft.SetText(mensaje, color);
+
+        // Posicionar cerca del carrito (convertir coordenadas a UI)
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        go.transform.position = screenPos + new Vector3(0, 80, 0); // un poquito arriba
+    }
+
 }
