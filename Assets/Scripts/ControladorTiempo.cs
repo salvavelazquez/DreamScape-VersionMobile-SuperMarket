@@ -23,6 +23,12 @@ public class ControladorTiempo : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
+
+        //Reactiva el carri en cada partida
+        GameObject carrito = GameObject.FindWithTag("Carrito");
+        if (carrito != null)
+            carrito.SetActive(true);
+
         tiempoRestante = tiempoInicial;
     }
 
@@ -37,7 +43,7 @@ public class ControladorTiempo : MonoBehaviour
         {
             tiempoRestante = 0;
             tiempoAgotado = true;
-            Debug.Log("¡El tiempo se ha agotado!");
+            Debug.Log("Â¡El tiempo se ha agotado!");
             PausarJuego();
         }
     }
@@ -59,7 +65,7 @@ public class ControladorTiempo : MonoBehaviour
     {
         Time.timeScale = 0f;
 
-        Debug.Log("Juego pausado. Volviendo al menú en 5 segundos...");
+        Debug.Log("Juego pausado. Volviendo al menÃº en 5 segundos...");
         StartCoroutine(VolverAlMenuDespuesDeEspera());
     }
     IEnumerator VolverAlMenuDespuesDeEspera()

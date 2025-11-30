@@ -23,32 +23,44 @@ public class CartAccelerometerController : MonoBehaviour
 
     void Update()
     {
-        // 1) Leer acelerómetro (solo X)
-        float tilt = Input.acceleration.x;   // -1 a 1
+        Vector3 acc = Input.acceleration;
 
-        // 2) Convertir a movimiento horizontal
+        // Validar NaN
+        if (float.IsNaN(acc.x) || float.IsNaN(acc.y) || float.IsNaN(acc.z))
+            return;
+
+        float tilt = acc.x;
+
         float targetX = transform.position.x + tilt * speed * Time.deltaTime;
+        if (float.IsNaN(targetX))
+            targetX = transform.position.x;
 
-        // 3) Suavizado (opcional)
-        float smoothX = Mathf.SmoothDamp(transform.position.x, targetX, ref velocityX, smooth);
+        float smoothX = Mathf.SmoothDamp(
+            float.IsNaN(transform.position.x) ? 0 : transform.position.x,
+            targetX,
+            ref velocityX, smooth
+        );
 
-        // 4) Limitar a los bordes visibles
         Vector3 clamped = ClampToScreen(smoothX);
 
-        // 5) Mover el carrito
         transform.position = new Vector3(clamped.x, fixedY, transform.position.z);
     }
 
     Vector3 ClampToScreen(float xValue)
     {
         float zDist = sceneCamera.WorldToScreenPoint(transform.position).z;
+        if (zDist <= 0 || float.IsNaN(zDist))
+            zDist = 10f;
 
-        // Bordes del mundo en base a la pantalla
         Vector3 left = sceneCamera.ScreenToWorldPoint(new Vector3(0, 0, zDist));
         Vector3 right = sceneCamera.ScreenToWorldPoint(new Vector3(Screen.width, 0, zDist));
+
+        if (float.IsNaN(xValue))
+            xValue = transform.position.x;
 
         xValue = Mathf.Clamp(xValue, left.x + margin, right.x - margin);
 
         return new Vector3(xValue, 0, 0);
     }
+
 }
