@@ -38,6 +38,7 @@ public class CarritoBehaviour : MonoBehaviour
 
     void Awake()
     {
+
         playerController = GetComponentInParent<CartAccelerometerController>();
         if (playerController != null)
         {
