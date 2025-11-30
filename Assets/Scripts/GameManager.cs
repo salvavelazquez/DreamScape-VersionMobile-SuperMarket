@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void ActualizarTexto()
     {
-        textoPuntaje.text = "Puntaje: " + PuntajeTotal.ToString();
+        textoPuntaje.text = PuntajeTotal.ToString();
         textoPutajeFinal.text = "Tu Puntaje Final es: " + puntajeTotal.ToString();   
     }
 }
