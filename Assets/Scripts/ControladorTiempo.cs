@@ -81,6 +81,21 @@ public class ControladorTiempo : MonoBehaviour
 
         int puntajeFinal = GameManager.instancia.PuntajeTotal;
 
+        
+        CarritoBehaviour carrito = FindFirstObjectByType<CarritoBehaviour>();
+        if (carrito != null)
+        {
+            if (carrito.cartelAzucar != null)
+                carrito.cartelAzucar.SetActive(false);
+
+            if (carrito.cartelGaseosas != null)
+                carrito.cartelGaseosas.SetActive(false);
+
+            if (carrito.cartelGrasas != null)
+                carrito.cartelGrasas.SetActive(false);
+        }
+
+
         // Mostrar puntaje en el texto
         textoResultadoPuntaje.text = "Puntaje Final: " + puntajeFinal;
 

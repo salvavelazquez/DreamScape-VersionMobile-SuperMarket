@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections; // Necesario para Corutinas
+using TMPro;
+
 
 public class CarritoBehaviour : MonoBehaviour
 {
@@ -57,12 +59,12 @@ public class CarritoBehaviour : MonoBehaviour
             // Texto flotante según si es comida saludable o chatarra
             if (alimento is BananaBehaviour)
             {
-                SpawnFloatingText("+10", Color.green);
+                SpawnFloatingText("+10", Color.green, other.transform.position);
 
             }
             else if (alimento is Hamburguesa)
             {
-                SpawnFloatingText("-10", Color.red);
+                SpawnFloatingText("-10", Color.red, other.transform.position);
             }
 
             if (alimento is Cereal)
@@ -165,22 +167,31 @@ public class CarritoBehaviour : MonoBehaviour
         efectoActivo = false;
     }
 
-    private void SpawnFloatingText(string mensaje, Color color)
+    private void SpawnFloatingText(string mensaje, Color color, Vector3 worldPos)
     {
         if (floatingTextPrefab == null || canvasHUD == null)
             return;
-        
-        // Crear texto en el canvas
+
+        // Crear texto
         GameObject go = Instantiate(floatingTextPrefab, canvasHUD);
 
-        // Obtener tu script de texto flotante
-        TextoFlotante ft = go.GetComponent<TextoFlotante>();
-        ft.SetText(mensaje, color);
+        // Obtener el TMP
+        TextMeshProUGUI tmp = go.GetComponent<TextMeshProUGUI>();
+        if (tmp != null)
+        {
+            tmp.text = mensaje;
+            tmp.color = color;
+        }
 
-        // Posicionar cerca del carrito (convertir coordenadas a UI)
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        go.transform.position = screenPos + new Vector3(0, 80, 0); // un poquito arriba
+        // Posición en pantalla
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        go.transform.position = screenPos;
+
+        // Destruir en 2 segundos
+        Destroy(go, 2f);
     }
+
+
 
     private IEnumerator ActivarMuchaAzucar()
     {
