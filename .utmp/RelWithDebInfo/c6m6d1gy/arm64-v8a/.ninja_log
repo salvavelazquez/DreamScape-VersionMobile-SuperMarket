@@ -1,0 +1,12 @@
+# ninja log v5
+98	922	7863189633078013	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	1e21e0c14c24212
+924	1883	7863189641015679	D:/GitHub/DreamScape-VersionMobile-SuperMarket/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/c6m6d1gy/obj/arm64-v8a/libswappywrapper.so	6e5b082b38e95635
+69	3564	7863189659367981	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	7557413a013d7e23
+38	3568	7863189658108092	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	25a1d3ed96dcadae
+19	3625	7863189659378000	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	ab9eae69935eff11
+82	3773	7863189660873444	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	ffbe2a517baa79d6
+54	3952	7863189662920772	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	c86674a8b32ddeb2
+10	4055	7863189664501891	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	350cd32044a64a31
+27	4532	7863189669280688	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	438ea73cc5cbe368
+1	4699	7863189670949137	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	ea42211ce8f2a954
+4700	4966	7863189673660010	D:/GitHub/DreamScape-VersionMobile-SuperMarket/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/c6m6d1gy/obj/arm64-v8a/libgame.so	652017d7dc33b436
