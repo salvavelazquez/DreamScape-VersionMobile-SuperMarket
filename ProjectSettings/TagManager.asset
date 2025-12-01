@@ -9,6 +9,7 @@ TagManager:
   - Chatarra
   - Destructor
   - Carrito
+  - TextoFlotante
   layers:
   - Default
   - TransparentFX

@@ -77,7 +77,7 @@ public class ControladorTiempo : MonoBehaviour
 
     private void MostrarResultado()
     {
-        
+        DesactivarTextosFlotantesClone();
 
         int puntajeFinal = GameManager.instancia.PuntajeTotal;
 
@@ -112,6 +112,25 @@ public class ControladorTiempo : MonoBehaviour
         {
             panelPerdiste.SetActive(true);
         }
+    }
+
+    private void DesactivarTextosFlotantesClone()
+    {
+        // Buscar todos los objetos activos que sean clones de textos
+        TextMeshProUGUI[] todosTextos = FindObjectsOfType<TextMeshProUGUI>();
+
+        int clonesDesactivados = 0;
+
+        foreach (TextMeshProUGUI texto in todosTextos)
+        {
+            if (texto.gameObject.activeInHierarchy && texto.gameObject.name.Contains("(Clone)"))
+            {
+                texto.gameObject.SetActive(false);
+                clonesDesactivados++;
+            }
+        }
+
+        Debug.Log($"Se desactivaron {clonesDesactivados} textos flotantes clone");
     }
 
 }

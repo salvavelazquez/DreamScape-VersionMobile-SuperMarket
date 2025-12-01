@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GaseosaCoquita
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d64f44e3f856b8f4a8ab9ab6851e9d08, type: 3}
+      propertyPath: m_TagString
+      value: Chatarra
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -99,8 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad25d2c4096277e48bbf59c411ac3154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3582547659661996223, guid: 9cca8e21293b02a4a819900df099152b, type: 3}
-  efecto: {fileID: 8101236504521576025, guid: b8f6b91abf95ed740957173782ccb262, type: 3}
 --- !u!65 &4948028530380406391
 BoxCollider:
   m_ObjectHideFlags: 0

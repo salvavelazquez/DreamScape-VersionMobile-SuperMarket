@@ -1734,10 +1734,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5981b8ba8bf9b414bbd1c35d7afbcd22, type: 3}
-  m_Resource: {fileID: 8300000, guid: 5981b8ba8bf9b414bbd1c35d7afbcd22, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4868e6b40296f564fab944c195a4f249, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4868e6b40296f564fab944c195a4f249, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1781,7 +1781,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.295
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4976,7 +4976,7 @@ PrefabInstance:
     - target: {fileID: 1534570152649833789, guid: 9cca8e21293b02a4a819900df099152b, type: 3}
       propertyPath: canvasHUD
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1131436267}
     - target: {fileID: 1534570152649833789, guid: 9cca8e21293b02a4a819900df099152b, type: 3}
       propertyPath: cartelAzucar
       value: 
@@ -4992,7 +4992,7 @@ PrefabInstance:
     - target: {fileID: 1534570152649833789, guid: 9cca8e21293b02a4a819900df099152b, type: 3}
       propertyPath: floatingTextPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7970458174809933476, guid: 146a5a31805d9cf40971bd70a7f2be67, type: 3}
     - target: {fileID: 1534570152649833789, guid: 9cca8e21293b02a4a819900df099152b, type: 3}
       propertyPath: efectoVisualGaseosa
       value: 
