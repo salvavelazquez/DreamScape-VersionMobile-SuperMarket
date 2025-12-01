@@ -10,10 +10,10 @@ El objetivo es atrapar alimentos saludables, evitar comidas chatarra y obtener l
 Este proyecto fue desarrollado como **trabajo final** para la materia **Diseño de VideoJuegos**.
 
 ### 👥 Integrantes del equipo:
-- **Condori Maximiliano**  
-- **Velázquez Augusto**  
+- **Condorí Maximiliano**  
+- **Velazquez Augusto**  
 - **Gonzalez Yanina**  
-- **Benencia Álvaro**
+- **Benencia Alvaro**
 
 ---
 
@@ -62,7 +62,7 @@ Este proyecto fue desarrollado como **trabajo final** para la materia **Diseño 
 Este proyecto fue desarrollado con fines estrictamente educativos.
 
 La marca registrada **COMODÍN** y cualquier recurso visual relacionado que aparezca en el proyecto son propiedad de sus titulares legales.  
-Su aparición en capturas o material de referencia no implica asociación, aprobación ni patrocinio.  
+Su aparición en capturas o material de referencia no implica asociación, aprobación ni patrocinio de todas las marcas mostradas.  
 El uso se limita a fines ilustrativos, no comerciales y dentro del contexto académico.
 
 
