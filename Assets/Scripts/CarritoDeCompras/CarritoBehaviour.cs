@@ -33,8 +33,15 @@ public class CarritoBehaviour : MonoBehaviour
     private int contadorCereal = 0;
     private bool azucarActiva = false;
 
+    [Header("Sonidos")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip sonidoBoost;
+    [SerializeField] private AudioClip sonidoSquish;
+
+
     public GameObject cartelGrasas;
     public GameObject cartelGaseosas;
+
 
 
 
@@ -126,6 +133,15 @@ public class CarritoBehaviour : MonoBehaviour
         efectoVisualGaseosa.gameObject.SetActive(true);
 
         Debug.Log($"Velocidad temporalmente: {playerController.speed}");
+
+        if (audioSource != null && sonidoBoost != null)
+        {
+            audioSource.clip = sonidoBoost;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+
+
         yield return new WaitForSeconds(duracionEfectoGaseosa);
 
         Debug.Log("Efecto de Gaseosa terminado. Volviendo a la normalidad.");
@@ -134,6 +150,13 @@ public class CarritoBehaviour : MonoBehaviour
         // Ocultar cartel
         if (cartelGaseosas != null)
             cartelGaseosas.SetActive(false);
+        
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+            audioSource.loop = false;
+        }
+
         efectoActivo = false;
     }
 
@@ -153,6 +176,14 @@ public class CarritoBehaviour : MonoBehaviour
         }
 
         Debug.Log($"Velocidad temporalmente REDUCIDA: {playerController.speed}");
+
+        if (audioSource != null && sonidoSquish != null)
+        {
+            audioSource.clip = sonidoSquish;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+
         yield return new WaitForSeconds(duracionEfectoGrasoso);
 
         Debug.Log("Efecto Grasoso terminado. Volviendo a la normalidad.");
@@ -166,6 +197,12 @@ public class CarritoBehaviour : MonoBehaviour
         // Ocultar cartel
         if (cartelGrasas != null)
             cartelGrasas.SetActive(false);
+
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+            audioSource.loop = false;
+        }
 
         efectoActivo = false;
     }
