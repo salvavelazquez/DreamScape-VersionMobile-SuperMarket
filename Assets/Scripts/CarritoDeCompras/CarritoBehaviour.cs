@@ -56,13 +56,16 @@ public class CarritoBehaviour : MonoBehaviour
             alimento.OperarPuntaje();
             alimento.DestruirObjeto();
 
-            // Texto flotante según si es comida saludable o chatarra
-            if (alimento is BananaBehaviour)
+      
+            // Si tiene tag Saludable +20
+            if (other.CompareTag("Fruta"))
             {
-                SpawnFloatingText("+10", Color.green, other.transform.position);
-
+                
+                SpawnFloatingText("+20", Color.green, other.transform.position);
             }
-            else if (alimento is Hamburguesa)
+
+            // Si tiene tag Chatarra -10
+            else if (other.CompareTag("Chatarra"))
             {
                 SpawnFloatingText("-10", Color.red, other.transform.position);
             }
@@ -187,8 +190,8 @@ public class CarritoBehaviour : MonoBehaviour
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         go.transform.position = screenPos;
 
-        // Destruir en 2 segundos
-        Destroy(go, 2f);
+        // Destruir en 1 segundos
+        Destroy(go, 1f);
     }
 
 
